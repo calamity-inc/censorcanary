@@ -31,7 +31,7 @@ censorcanary.showBanner = (lang) => {
 			div.className = "alert alert-warning censorcanary-alert";
 			div.setAttribute("role", "alert");
 			div.innerHTML = censorcanary.message[lang ?? (navigator.language || "en").split("-")[0].toLowerCase()] ?? censorcanary.message.en;
-			(document.querySelector("body > .container") || document.body).prepend(div);
+			(document.querySelector("body > .container") || document.querySelector("body > .container-fluid") || document.body).prepend(div);
 		}
 	};
 	if (document.readyState === "loading") {
