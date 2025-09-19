@@ -19,6 +19,6 @@ Simply include the script in your webpage:
 ```
 You can also load it directly from this repository:
 ```html
-<script src="https://censorcanary.org/censorcanary.js" defer></script>
+<script src="https://cdn.jsdelivr.net/gh/calamity-inc/censorcanary/censorcanary.js" defer></script>
 ```
 If you want to check what the banner will look like, you can run `censorcanary.showBanner();` in your browser console.
