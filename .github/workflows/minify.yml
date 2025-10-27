@@ -1,0 +1,20 @@
+name: Build minified JS
+on: push
+permissions:
+  contents: write
+jobs:
+  minify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install -g terser
+      - run: terser censorcanary.js -c -m -o censorcanary.min.js
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update censorcanary.min.js"
+          file_pattern: censorcanary.min.js
